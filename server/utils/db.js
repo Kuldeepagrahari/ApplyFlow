@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 // ----------BUG: env config has not been done currently: in case we import this file statically in server.js. But in case of dynamic import, we can write this line here also
-const URI = process.env.MONGODB_URI;
+// const URI = process.env.MONGODB_URI;
 //--------------------------------------
 
 const ConnectDB = async () => {
@@ -15,7 +15,6 @@ const ConnectDB = async () => {
 
     try {
         await mongoose.connect(URI);
-
         console.log("MongoDB Connected Successfully!");
     } catch (error) {
         console.error("MongoDB Connection Failed:", error);
